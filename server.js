@@ -52,10 +52,9 @@ const RESTAURANT = {
 
 const express = require('express');
 const app = express();
+require("dotenv").config() 
 
 app.get('/', (req, res) => {
-  isOpen = true;
-  
   res.render("home.ejs" ,RESTAURANT)
     
 
@@ -70,7 +69,7 @@ app.get("/menu" , (req , res) =>{
 
 
 app.get("/menu/:category" , (req , res) =>{
-  const filteredItems = RESTAURANT.menu.filter((menuItem)=>{return menuItem.category === req.params.category})
+  const filteredItems = RESTAURANT.menu.filter((oneMenuItem)=>{return oneMenuItem.category === req.params.category})
 res.render("category.ejs",{filteredItems, category: req.params.category})
 })
 

@@ -12,6 +12,16 @@
   <p>address: <%= address%></p>
   <p>phone: <%= phone%></p>
 
+  <%= isOpen %>
+  <% if(isOpen === true){ %>
+    <p>Yes we are open!</p>
+
+  <% } %>
+  <% else{ %>
+    <p>Sorry, We are closed</p>
+
+  <% } %>
+
   <%- include('./menue') %>
         
 
